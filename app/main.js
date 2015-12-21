@@ -8,4 +8,8 @@ import homeSignals from './modules/Home/signals';
 
 homeSignals(controller);
 
-ReactDOM.render(<Container controller={controller}><Home /></Container>, document.getElementById('root'));
+ReactDOM.render(
+  <Container controller={controller}>
+    <Home />
+  </Container>,
+  document.getElementById('root'));
