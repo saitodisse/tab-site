@@ -1,16 +1,25 @@
 import React from 'react';
 import {Decorator as Cerebral} from 'cerebral-react';
 import Title from './components/Title';
+import Song from './components/Song';
 
 @Cerebral({
   title: ['title'],
   color: ['color'],
   customColor: ['customColor'],
+  song: ['song'],
 })
 class App extends React.Component {
+
+  componentDidMount() {
+    this.props.signals.songLoaded();
+  }
+
   render() {
     return (
       <div>
+        <Song song={this.props.song}></Song>
+
         <Title color={this.props.color}>
           {/* Title.children is required */}
           {this.props.title}
